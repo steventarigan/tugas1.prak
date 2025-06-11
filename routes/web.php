@@ -1,13 +1,11 @@
 <?php
 
-use App\Models\guru;
-use App\Models\dosen;
-use App\Models\prodi;
-use App\Models\Matakuliah;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\BukuController;
 use App\Http\Controllers\BiodataController;
-use GuzzleHttp\Promise\Create;
+use App\Models\dosen;
+use App\Models\guru;
+use App\Models\Matakuliah;
+use App\Models\prodi;
 
 Route::get('/', function () {
     return view('welcome');
@@ -33,12 +31,6 @@ Route::get('prodi/create',function(){
         }
     });
 
-    Route::get('/buku',[BukuController::class, 'index'])->name('buku.index');
-    Route::get('/buku/create',[BukuController::class, 'Create'])->name('buku.create');
-    Route::post('/buku',[BukuController::class, 'store'])->name('buku.store');
-    Route::get('/buku/{id}/edit',[BukuController::class, 'edit'])->name('buku.edit');
-    Route::put('/buku/update/{id}',[BukuController::class, 'update'])->name('buku.update');
-    Route::delete('/buku/destroy/{id}',[BukuController::class, 'destroy'])->name('buku.destroy');
 // Route::get('dosen/create',function(){
 //         dosen::create([
 //             'namadosen'=>'Arina',
